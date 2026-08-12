@@ -1,0 +1,445 @@
+@font-face{
+    font-family:Nosifer;
+    src:url("../fonts/Nosifer-Regular.ttf");
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    height:100vh;
+
+    background:url("../assest/bgn.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    overflow:hidden;
+
+    font-family:Poppins;
+
+    display:flex;
+
+    align-items:center;
+
+    animation:zoom 18s ease-in-out infinite alternate;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle,
+
+    transparent 30%,
+
+    rgba(0,0,0,.7) 100%);
+
+}
+
+.menu{
+
+    position:relative;
+
+    z-index:10;
+
+    margin-left:60px;
+
+    color:white;
+
+}
+
+h1{
+
+    font-family:Nosifer;
+
+    font-size:35px;
+
+    line-height:70px;
+
+    margin-bottom:14px;
+
+    margin-left: -40px;
+
+    text-shadow:0 0 20px #000;
+
+}
+
+#going {
+    color: azure;
+}
+#going:hover{
+
+transform:translateX(18px);
+
+letter-spacing:3px;
+
+color:#d21f2b;
+
+text-shadow:
+
+0 0 10px red,
+
+0 0 20px red;
+
+}
+
+
+.line{
+
+    width:360px;
+
+    height:2px;
+
+    background:#a30000;
+
+    margin-bottom:45px;
+
+    margin-left: -28px;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+li{
+
+    font-size:30px;
+
+    margin:38px 0;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    width:max-content;
+
+}
+
+li{
+
+transition:.35s;
+
+}
+
+li:hover{
+
+transform:translateX(18px);
+
+letter-spacing:3px;
+
+color:#d21f2b;
+
+text-shadow:
+
+0 0 10px red,
+
+0 0 20px red;
+
+}
+
+.active{
+
+position:relative;
+
+color:azure;
+
+overflow:hidden;
+
+}
+
+.active::before{
+
+content:"";
+
+position:absolute;
+
+left:-25px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:12px;
+
+height:2px;
+
+background:#d21f2b;
+
+}
+
+.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:60px;
+
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.8),
+    transparent);
+
+    transform:skewX(-20deg);
+
+    animation:shine 2.5s infinite;
+
+}
+
+@keyframes shine{
+
+100%{
+
+left:180%;
+
+}
+
+}
+
+
+.glass{
+
+    position:absolute;
+
+    z-index: 5;
+
+    margin-left:50px;
+
+    padding:10px;
+
+    width:530px;
+
+    height:670px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(5px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition: 1s ease;
+
+    box-shadow:
+    0 0 40px rgba(0,0,0,.5);
+
+    animation:fade .9s ease;
+
+
+}
+
+@keyframes zoom{
+
+from{
+
+background-size:100%;
+
+}
+
+to{
+
+background-size:110%;
+
+}
+
+}
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateX(-80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+.glass:hover{
+
+transform:scale(1.02);
+
+transition:1s ease;
+
+box-shadow:
+
+0 0 20px rgba(255,0,0,.25),
+
+0 0 60px rgba(0,0,0,.6);
+
+}
+
+
+
+.fog{
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+height:180px;
+
+background:linear-gradient(
+
+to top,
+
+rgba(255, 255, 255, 0.384),
+
+transparent
+
+);
+
+filter:blur(30px);
+
+animation:fog 6s ease-in-out infinite alternate;
+
+}
+
+@keyframes fog{
+
+from{
+
+transform:translateX(-20px);
+
+}
+
+to{
+
+transform:translateX(20px);
+
+}
+
+}
+
+
+.particles{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background-image:
+
+radial-gradient(#ff593d 1px,transparent 1px);
+
+background-size:120px 120px;
+
+opacity:.35;
+
+animation:moveParticles 25s linear infinite;
+
+}
+
+@keyframes moveParticles{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-200px);
+
+}
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        min-height: 100vh;
+        overflow: auto;
+        align-items: center;
+    }
+
+    .menu {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-left: 0;
+    }
+
+    .line {
+        width: 220px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+
+    li {
+        font-size: 23px;
+        margin: 24px 0;
+    }
+
+    .glass {
+        position: relative;
+        width: min(90vw, 400px);
+        height: auto;
+        min-height: auto;
+        margin-left: 0;
+        padding: 28px 24px;
+        border-radius: 22px;
+    }
+
+    .glass:hover {
+        transform: none;
+    }
+
+    .fog {
+        height: 100px;
+    }
+
+    .particles {
+        opacity: .2;
+    }
+
+}
